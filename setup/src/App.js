@@ -12,6 +12,12 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
+  // Create a new array with tours that do not have matching IDs as the tour that was removed
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   // Function to fetch data from URL
   const fetchTours = async () => {
     setLoading(true);
@@ -45,10 +51,24 @@ function App() {
     );
   }
 
+  // If all tours were removed, allow user to refresh page
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button className="btn" onClick={() => fetchTours()}>
+            refresh
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   // Else, display the tours rendered
   return (
     <main>
-      <Tours tours={tours}/>
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 }
