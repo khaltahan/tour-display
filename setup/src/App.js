@@ -48,7 +48,7 @@ function App() {
   // Else, display the tours rendered
   return (
     <main>
-      <Tours />
+      <Tours tours={tours}/>
     </main>
   );
 }
