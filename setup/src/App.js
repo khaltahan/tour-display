@@ -56,9 +56,9 @@ function App() {
     return (
       <main>
         <div className="title">
-          <h2>no tours left</h2>
-          <button className="btn" onClick={() => fetchTours()}>
-            refresh
+          <h2>No Tours Left</h2>
+          <button className="refresh-btn" onClick={() => fetchTours()}>
+            Refresh
           </button>
         </div>
       </main>

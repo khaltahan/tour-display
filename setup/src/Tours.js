@@ -7,10 +7,10 @@ const Tours = ({ tours, removeTour }) => {
   return (
     <section>
       <div className="title">
-        <h2>Khalid's tours</h2>
+        <h2>Khalid's Tours</h2>
         <div className="underline"></div>
       </div>
-      <div>
+      <div className="tours">
         {tours.map((tour) => {
           // Key needed as the back-end needs to differentiate Tour
           return <Tour key={tour.id} {...tour} removeTour={removeTour}></Tour>;

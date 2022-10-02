@@ -14,10 +14,10 @@ const Tour = ({ id, image, info, price, name, removeTour }) => {
           <h4 className="tour-price">${price}</h4>
         </div>
         {/* Only display 200 characters, but if user clicks Read More, display the whole paragraph */}
-        <p>
+        <p className="tour-text">
           {readMore ? info : `${info.substring(0, 200)}...`}
           <button onClick={() => setReadMore(!readMore)}>
-            {readMore ? "show less" : "read more"}
+            {readMore ? "Show Less" : "Read More"}
           </button>
         </p>
         <button
@@ -25,7 +25,7 @@ const Tour = ({ id, image, info, price, name, removeTour }) => {
           id="delete-btn"
           onClick={() => removeTour(id)}
         >
-          not interested
+          Not Interested
         </button>
       </footer>
     </article>
